@@ -1,4 +1,4 @@
-package org.aziz.quince.service;
+package org.aziz.quince.service.features;
 
 import java.util.Map;
 
@@ -7,7 +7,7 @@ import java.util.Map;
  */
 public class EnvService {
     private String POD_GROUP_KEY;
-
+    // Refactoring: Change method signature: POD_GROUP_KEY was given directly to getEnvValue()
     public EnvService(String POD_GROUP_KEY) {
         this.POD_GROUP_KEY = POD_GROUP_KEY;
     }

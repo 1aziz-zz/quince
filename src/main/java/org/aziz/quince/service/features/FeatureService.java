@@ -1,4 +1,4 @@
-package org.aziz.quince.service;
+package org.aziz.quince.service.features;
 
 import org.aziz.quince.model.Feature;
 
@@ -9,5 +9,5 @@ public interface FeatureService {
 
     Map<String, List<Feature>> retrieveFeatures();
     boolean isActive(String featureTitle);
-
+    int countFeatures();
 }
