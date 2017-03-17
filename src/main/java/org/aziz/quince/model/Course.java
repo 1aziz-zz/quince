@@ -72,14 +72,16 @@ public class Course implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Course course = (Course) o;
 
-        if (getId() != course.getId()) return false;
-        return getName() != null ? getName().equals(course.getName()) : course.getName() == null;
-
+        return (getId() != course.getId()) && (getName() != null ? getName().equals(course.getName()) : course.getName() == null);
     }
 
     @Override

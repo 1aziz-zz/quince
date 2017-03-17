@@ -52,10 +52,8 @@ public class FeatureServiceImpl implements FeatureService {
     public boolean isActive(String featureTitle) {
         if (this.groupExists()) {
             for (Feature feature : this.retrieveFeatures().get(POD_GROUP_VALUE)) {
-                if (feature.getTitle().equals(featureTitle)) {
-                    if (feature.getStatus()) {
-                        return true;
-                    }
+                if (feature.getTitle().equals(featureTitle) && feature.getStatus()) {
+                    return true;
                 }
             }
         }
