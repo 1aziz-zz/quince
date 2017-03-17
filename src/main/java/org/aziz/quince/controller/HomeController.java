@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HomeController {
-    private final String POD_GROUP = "GROUP";
-    private final String url_jsonFile = "https://featuresservice.herokuapp.com/myfeatures";
-    private final EnvService envService = new EnvService(POD_GROUP);
+    private static final String PODGROUP = "GROUP";
+    private static final String urlJsonFile = "https://featuresservice.herokuapp.com/myfeatures";
+    private final EnvService envService = new EnvService(PODGROUP);
     // Refactoring: Extract Constant/field/variable:
     private final String envValue = envService.getEnvValue();
 
-    private final FeatureService featureService = FeatureServiceImpl.create(url_jsonFile, envValue);
+    private final FeatureService featureService = FeatureServiceImpl.create(urlJsonFile, envValue);
 
     @RequestMapping(value = "/")
 
